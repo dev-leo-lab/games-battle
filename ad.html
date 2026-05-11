@@ -1,134 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tap Battle - Join the Fight</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Battle Landing Page</title>
 
-        body {
-            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 50%, #AB47BC 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #fff;
-        }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            padding: 40px 28px;
-            max-width: 480px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.6s ease-out;
-        }
+body {
+  background: linear-gradient(180deg, #1b002d, #4b0082, #8b00ff);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
 
-        .emoji-line {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 18px;
-            text-align: left;
-            display: flex;
-            gap: 12px;
-        }
+.hero {
+  padding: 60px 20px 40px;
+}
 
-        .emoji {
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-        .title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 28px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
+.highlight-box {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 22px;
+  padding: 25px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.25);
+}
 
-        .cta-button {
-            background: #fff;
-            color: #6A1B9A;
-            border: none;
-            border-radius: 50px;
-            padding: 18px 32px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            width: 100%;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.highlight-box p {
+  font-size: 1.1rem;
+  margin: 14px 0;
+}
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-            background: #f5f5f5;
-        }
+.subtext {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
 
-        .cta-button:active {
-            transform: translateY(0);
-        }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(90deg, #ff00c8, #ff4df3);
+  color: white;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 40px;
+  font-size: 1rem;
+  box-shadow: 0 0 18px rgba(255, 0, 200, 0.5);
+  transition: 0.3s;
+}
 
-        .note {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-top: 20px;
-        }
+.btn:hover {
+  transform: scale(1.05);
+}
 
-        @media (max-width: 480px) {
-            .card { padding: 32px 20px; }
-            .title { font-size: 1.5rem; }
-            .emoji-line { font-size: 1rem; }
-        }
-    </style>
+.section-title {
+  font-size: 1.7rem;
+  margin: 45px 0 25px;
+}
+
+.battle-card {
+  background: rgba(0,0,0,0.22);
+  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.3);
+}
+
+.battle-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.battle-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.steps {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.step {
+  background: rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 15px;
+}
+
+.step h4 {
+  margin-bottom: 8px;
+}
+
+.footer-cta {
+  padding: 50px 20px 70px;
+}
+
+.footer-cta h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.floating {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.3;
+  animation: float 8s infinite linear;
+}
+
+.f1 { left: 10%; top: 20%; animation-delay: 0s; }
+.f2 { left: 80%; top: 35%; animation-delay: 2s; }
+.f3 { left: 20%; top: 70%; animation-delay: 4s; }
+.f4 { left: 75%; top: 80%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+</style>
 </head>
-<body>
-    <div class="card">
-        <h1 class="title">Join the Tap Battle</h1>
-        
-        <div class="emoji-line">
-            <span class="emoji">⚔️</span>
-            <span>How fast can you tap and beat the world in a battle?</span>
-        </div>
-        
-        <div class="emoji-line">
-            <span class="emoji">⏰</span>
-            <span>60 seconds of your fingers vs the world.</span>
-        </div>
-        
-        <div class="emoji-line">
-            <span class="emoji">👥</span>
-            <span>Refer to get free tickets and participate in the battle.</span>
-        </div>
-        
-        <div class="emoji-line">
-            <span class="emoji">🏆</span>
-            <span>Live leaderboard updates instantly. Top 3 tappers win and earn crypto rewards.</span>
-        </div>
 
-        <button class="cta-button" onclick="window.location.href='https://games-battle.lovable.app'">
-            Start Tap Battle
-        </button>
-      
+<body>
+
+<div class="floating f1">💎</div>
+<div class="floating f2">⚔️</div>
+<div class="floating f3">🎟️</div>
+<div class="floating f4">🏆</div>
+
+<div class="container">
+
+  <section class="hero">
+    <h1>🎮 Join Battle Rounds & Win Rewards</h1>
+
+    <div class="highlight-box">
+      <p>⭐ 10 players join each round</p>
+      <p>⭐ 3 winners are selected</p>
+      <p>⭐ Each winner wins <strong>100 💎 FREE</strong></p>
     </div>
+
+    <p class="subtext">
+      Join free and paid battles.<br>
+      Compete with other players and win gems.
+    </p>
+
+    <a href="https://games-battle.lovable.app" class="btn">JOIN BATTLE NOW</a>
+  </section>
+
+  <h2 class="section-title">⚔️ Live Battle Preview</h2>
+
+  <div class="battle-card">
+    <h3>Tap Battle</h3>
+    <p>Entry Fee: FREE</p>
+    <p>Players: 7/10</p>
+    <p>Prize Pool: 300 💎</p>
+    <p>Winners: 3</p>
+  </div>
+
+  <div class="battle-card">
+    <h3>Premium Battle</h3>
+    <p>Entry Fee: 10 🎟️</p>
+    <p>Players: 4/10</p>
+    <p>Prize Pool: 6000 💎</p>
+    <p>Winners: 3</p>
+  </div>
+
+  <h2 class="section-title">How It Works</h2>
+
+  <div class="steps">
+    <div class="step">
+      <h4>1. Join a battle</h4>
+      <p>Enter free or premium rounds instantly.</p>
+    </div>
+
+    <div class="step">
+      <h4>2. Wait for players</h4>
+      <p>Battle starts after 10 players join.</p>
+    </div>
+
+    <div class="step">
+      <h4>3. Winners selected</h4>
+      <p>Top players receive gem rewards.</p>
+    </div>
+  </div>
+
+  <section class="footer-cta">
+    <h2>Ready to join the next round?</h2>
+    <a href="https://games-battle.lovable.app" class="btn">START BATTLE</a>
+  </section>
+
+</div>
+
 </body>
-  </html>
+      </html>
